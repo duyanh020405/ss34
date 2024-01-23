@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #btn{
+        display: flex;
+        position: relative;
+        height: 200px;
+        width: 400px;
+        background-color: aqua;
+        font-size: xx-large;
+
+    }
+</style>
+
+<body>
+    <input type="button" id="btn" value="Click me"/>
+<script>
+    var obj = document.getElementById('btn');
+    obj.addEventListener('click', function(){
+        alert('Bạn đã mất người yêu :)');
+    });
+</script>
+</body>
+</html>

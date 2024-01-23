@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+      }
+
+      .item {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #add-item-input {
+        margin-right: 5px;
+      }
+      button {
+        background-color: rgb(158, 233, 83);
+        height: 20px;
+        width: 100px;
+        border-radius: 10px;
+      }
+      #add-item-input {
+
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="item-list">
+      <li class="item">
+        Item 1 <button onclick="removeItem(this)">Remove</button>
+      </li>
+      <li class="item">
+        Item 123 <button onclick="removeItem(this)">Remove</button>
+      </li>
+    </ul>
+
+    <div>
+      <input type="text" id="add-item-input" />
+      <button onclick="addItem()">add Item</button>
+    </div>
+
+    <script>
+      function addItem() {
+        let newItemText = document.getElementById("add-item-input").value;
+
+        let itemList = document.getElementById("item-list");
+
+        let newItem = document.createElement("li");
+        newItem.className = "item";
+        newItem.innerHTML =
+          newItemText + ' <button onclick="removeItem(this)">Remove</button>';
+
+        itemList.appendChild(newItem);
+
+        document.getElementById("add-item-input").value = "";
+      }
+
+      function removeItem(button) {
+        let item = button.parentNode;
+        item.parentNode.removeChild(item);
+      }
+    </script>
+  </body>
+</html>
